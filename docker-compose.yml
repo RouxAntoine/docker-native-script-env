@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        VERSION: "12-stretch"
+    privileged: true
+    stdin_open: true
+    tty: true
+    container_name: adb_tns
+    volumes:
+      - ./GoOut:/app
+      - /dev/bus/usb:/dev/bus/usb
+      - GoOut-release:/dist
+    command: tail -f /dev/null
+
+volumes:
+  GoOut-release:

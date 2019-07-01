@@ -1,0 +1,3 @@
+[submodule "GoOut"]
+	path = GoOut
+	url = git@github.com:vincentriche/GoOUT.git
