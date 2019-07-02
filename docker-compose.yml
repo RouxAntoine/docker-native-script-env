@@ -1,4 +1,4 @@
-version: '3.7'
+version: '2.4'
 
 services:
   app:
@@ -16,6 +16,8 @@ services:
       - /dev/bus/usb:/dev/bus/usb
       - GoOut-release:/dist
     command: tail -f /dev/null
+    mem_limit: 1g
+    mem_reservation: 512m
 
 volumes:
   GoOut-release:
